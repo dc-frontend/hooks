@@ -10,4 +10,4 @@ Object.defineProperty(exports, "useStorageState", {
   }
 });
 
-var _useStorageState = require("./src/useStorageState");
+var _useStorageState = require("./dist/useStorageState");
