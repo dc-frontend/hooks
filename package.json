@@ -1,6 +1,6 @@
 {
   "name": "@davidcraig/hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of reusable reactjs hooks.",
   "types": "./main.d.ts",
   "main": "main.js",
