@@ -5,7 +5,7 @@
   "types": "./main.d.ts",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build": "tsc && npm run build-main",
     "build-main": "babel main.js --out-dir ."
   },
