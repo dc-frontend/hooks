@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of reusable reactjs hooks.",
   "types": "./main.d.ts",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "jest --passWithNoTests",
     "build": "tsc && npm run build-main",
