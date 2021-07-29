@@ -2,10 +2,11 @@
   "name": "@davidcraig/hooks",
   "version": "1.0.0",
   "description": "",
+  "types": "./main.d.ts",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "babel src --out-dir dist",
+    "build": "tsc && npm run build-main",
     "build-main": "babel main.js --out-dir ."
   },
   "author": "",
@@ -18,6 +19,7 @@
     "@babel/preset-typescript": "^7.14.5",
     "@types/react": "^17.0.15",
     "jest": "^27.0.6",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "typescript": "^4.3.5"
   }
 }
