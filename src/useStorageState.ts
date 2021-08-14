@@ -1,29 +1,27 @@
 /* globals localStorage */
 import React, { useState, useEffect } from 'react'
 
-export function useStorageState (initialValue: unknown, storageKey: string) {
-  if (typeof window !== 'undefined') {
-    // Set up our state, checking if localStorage exists and populating with that
-    const [value, setValue] = useState(() => {
+export function useStorageState (initialValue, storageKey) {
+  const [value, setValue] = useState(initialValue)
+
+  useEffect(() => {
+    try {
       const stored = localStorage.getItem(storageKey)
-      try {
-        return stored ? JSON.parse(stored) : initialValue
-      } catch (error) {
-        // If error also return initialValue
-        console.warn('error from useStorageState: ', error)
-        return initialValue
+      if (stored !== null) {
+        setValue(JSON.parse(stored))
       }
-    })
+    } catch (error) { // If error also return initialValue
+      console.warn(error)
+    }
+  }, [])
 
-    // Update localStorage whenever the value is changed
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
       localStorage.setItem(storageKey, JSON.stringify(value))
-    }, [value])
+    }
+  }, [value])
 
-    return [value, setValue]
-  }
-
-  return useState(initialValue)
+  return [value, setValue]
 }
 
 export default useStorageState
